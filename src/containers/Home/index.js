@@ -1,10 +1,12 @@
 // containers/Home.js	
 import React from 'react';
+import Header from '../../components/Header';
 const Home = () => {
   return (
-    <div>
-      <div>Hello World</div>
-    </div>
+      <div>
+        <Header />home
+        <button onClick={() => { alert('click'); }}>按钮</button>
+      </div>
   )
 } 
 
