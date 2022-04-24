@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Routes from '../Routes'
 import { Provider } from 'react-redux';
 import { getClientStore } from '../store'; // 使用store
+import { renderRoutes } from 'react-router-config';
 
 const store = getClientStore()
 
@@ -12,11 +13,7 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter > 
         <div>
-            {
-              Routes.map(route => (
-                <Route {...route} />
-              ))
-            }
+          {renderRoutes(Routes)}
         </div>
       </BrowserRouter>
     </Provider>	

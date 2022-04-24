@@ -1,22 +1,27 @@
-import React from 'react';
 import Home from './containers/Home';
 import Login from './containers/Login';
+import App from './App'
 
 
+//这里出现了多级路由	
 export default [{
-    path: '/',
-    component: Home,
-    exact: true,
-    key: 'home',
-    loadData: Home.loadData
-  },
-  {
-    path: '/login',
-    component: Login,
-    key: 'login',
-    exact: true
-  }
-]
+  path: '/',
+  component: App,
+  routes: [{
+      path: "/",
+      component: Home,
+      exact: true,
+      loadData: Home.loadData,
+      key: 'home',
+    },
+    {
+      path: '/login',
+      component: Login,
+      exact: true,
+      key: 'login',
+    }
+  ]
+}]
 
 // export default (	
 //   <div>	

@@ -4,7 +4,7 @@ import { StaticRouter, Route } from 'react-router-dom';
 import Routes from '../Routes';
 import { getStore } from '../store'; // 使用store
 import { Provider } from 'react-redux';
-import { matchRoutes as matchRoute } from 'react-router-config';
+import { matchRoutes as matchRoute, renderRoutes } from 'react-router-config';
 
 export const render = (req, res) => {
   const store = getStore();
@@ -24,11 +24,7 @@ export const render = (req, res) => {
       <Provider store = { store } >
         <StaticRouter location={req.path} context={{}}>
           <div>
-            {
-              Routes.map(route => (
-                <Route {...route} />
-              ))
-            }
+            {renderRoutes(Routes)}
           </div> 
         </StaticRouter > 
       </Provider>
