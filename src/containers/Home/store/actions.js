@@ -9,9 +9,9 @@ const changeList = list => ({
 });
 
 export const getHomeList = () => {
-  return dispatch => {
-    //另外起的本地的后端服务	
-    return axios.get('http://localhost:8000/api/news.json')
+  //返回函数中的默认第三个参数是withExtraArgument传进来的axios实例	
+  return (dispatch, getState, axiosInstance) => {
+    return axiosInstance.get('/api/news.json')
       .then((res) => {
         const list = res.data.data;
         dispatch(changeList(list))
