@@ -4,7 +4,8 @@ import { renderRoutes } from 'react-router-config';
  
 const  App = (props) => {
   return (	
-    <div>	
+    <div>
+      <div>name: palate</div>
       <Header></Header>	
       {/* 拿到Login和Home组件的路由	 */}
       {renderRoutes(props.route.routes)}

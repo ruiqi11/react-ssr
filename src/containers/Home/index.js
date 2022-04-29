@@ -15,6 +15,7 @@ class Home extends Component {
         <div>Home</div>
         {this.getList()}
         <button onClick={() => { alert('click1'); }}>按钮</button>
+        <div>ctrl+u查看源码</div>
     </div>
     )
   }	
@@ -27,7 +28,7 @@ class Home extends Component {
   }
   componentDidMount() {
     if (!this.props.list.length) {	
-      this.props.getHomeList()	
+      this.props.getHomeList()
     }
   }
 }
